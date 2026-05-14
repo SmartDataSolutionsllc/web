@@ -10,14 +10,19 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--txt);overflow-x:hidden;line-height:1.6}
+
+/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 5%;display:flex;align-items:center;justify-content:space-between;transition:background .3s}
 nav.scrolled{background:rgba(15,22,28,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(34,207,246,.1)}
-.logo-text{font-size:1.1rem;font-weight:700;color:var(--c1);letter-spacing:-.01em}
+.logo-text{font-size:1.1rem;font-weight:700;color:var(--c1);letter-spacing:-.01em;cursor:pointer;background:none;border:none;font-family:inherit;transition:opacity .2s}
+.logo-text:hover{opacity:.75}
 .nav-links{display:flex;align-items:center;gap:2.25rem;list-style:none}
 .nav-links a{color:var(--txt2);text-decoration:none;font-size:.875rem;font-weight:400;letter-spacing:.02em;transition:color .2s}
 .nav-links a:hover{color:var(--txt)}
 .btn-nav{background:var(--c2)!important;color:#fff!important;padding:.5rem 1.2rem;border-radius:6px;font-weight:500!important;transition:background .2s,transform .2s!important}
 .btn-nav:hover{background:var(--c1)!important;transform:translateY(-1px)}
+
+/* HERO */
 #hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
 #canvas-bg{position:absolute;inset:0;width:100%;height:100%}
 .hero-inner{position:relative;z-index:2;max-width:860px;text-align:center;padding:0 2rem}
@@ -30,10 +35,14 @@ nav.scrolled{background:rgba(15,22,28,.88);backdrop-filter:blur(16px);border-bot
 .btn-primary:hover{background:var(--c1);transform:translateY(-2px);box-shadow:0 8px 28px rgba(34,207,246,.22)}
 .btn-ghost{display:inline-block;color:var(--txt2);padding:.9rem 1.85rem;border-radius:8px;text-decoration:none;font-weight:400;font-size:.95rem;border:1px solid rgba(255,255,255,.15);transition:color .2s,border-color .2s,transform .2s}
 .btn-ghost:hover{color:var(--txt);border-color:rgba(34,207,246,.4);transform:translateY(-2px)}
+
+/* STATS BAR */
 .stats-bar{background:var(--bg2);border-top:1px solid rgba(34,207,246,.08);border-bottom:1px solid rgba(34,207,246,.08);padding:1.5rem 5%;display:flex;justify-content:center;gap:4rem;flex-wrap:wrap}
 .stat{text-align:center}
 .stat-n{font-size:1.6rem;font-weight:700;color:var(--c1);letter-spacing:-.02em;line-height:1}
 .stat-l{font-size:.75rem;color:var(--txt2);font-weight:300;margin-top:.25rem;letter-spacing:.03em}
+
+/* SECTIONS */
 section{padding:6rem 5%}
 .wrap{max-width:1200px;margin:0 auto}
 .s-tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--c1);margin-bottom:.75rem}
@@ -41,6 +50,8 @@ section{padding:6rem 5%}
 .s-sub{font-size:1.05rem;color:var(--txt2);font-weight:300;line-height:1.75}
 .gc{background:var(--glass);border:1px solid var(--gb);border-radius:var(--r);backdrop-filter:blur(12px);transition:border-color .3s,background .3s}
 .gc:hover{border-color:rgba(34,207,246,.28);background:rgba(255,255,255,.06)}
+
+/* SOBRE */
 #sobre{background:var(--bg)}
 .sobre-desc{font-size:1.05rem;color:var(--txt2);font-weight:300;line-height:1.85;margin-top:1.5rem;margin-bottom:2.75rem}
 .mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
@@ -48,6 +59,8 @@ section{padding:6rem 5%}
 .mv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c2),var(--c1),transparent);opacity:.6}
 .mv-label{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--c1);margin-bottom:.8rem}
 .mv-card p{font-size:1rem;color:var(--txt2);font-weight:300;line-height:1.85}
+
+/* SERVICIOS */
 #servicios{background:var(--bg2)}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.75rem}
 .svc-card{padding:2rem;transition:border-color .3s,transform .3s,box-shadow .3s}
@@ -61,8 +74,13 @@ section{padding:6rem 5%}
 .svc-cta{text-align:center;margin-top:2.5rem}
 .svc-cta a{color:var(--c1);text-decoration:none;font-size:.9rem;border-bottom:1px solid rgba(34,207,246,.3);padding-bottom:.15rem;transition:color .2s,border-color .2s}
 .svc-cta a:hover{color:var(--txt);border-color:rgba(255,255,255,.4)}
-#metodologia{background:var(--bg)}
-.fases{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.75rem;position:relative}
+
+/* METODOLOGÍA */
+#metodologia{background:var(--bg);position:relative;overflow:hidden}
+#met-deco{position:absolute;inset:0;pointer-events:none;z-index:0}
+.fdot{position:absolute;border-radius:50%;animation:floatDot 8s ease-in-out infinite}
+@keyframes floatDot{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.fases{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.75rem;position:relative;z-index:1}
 .fases::before{content:'';position:absolute;top:1.9rem;left:calc(16.66% + 1.5rem);right:calc(16.66% + 1.5rem);height:1px;background:linear-gradient(90deg,transparent,rgba(34,207,246,.25),rgba(34,207,246,.25),transparent)}
 .fase{padding:2rem;transition:border-color .3s,transform .3s}
 .fase:hover{border-color:rgba(34,207,246,.3);transform:translateY(-3px)}
@@ -70,16 +88,28 @@ section{padding:6rem 5%}
 .fase-n::after{content:'';width:20px;height:1px;background:rgba(34,207,246,.4)}
 .fase h3{font-size:1.05rem;font-weight:600;margin-bottom:.7rem}
 .fase p{font-size:1rem;color:var(--txt2);font-weight:300;line-height:1.8}
+
+/* CASO */
 #caso{background:var(--bg2);overflow:hidden;position:relative}
 #caso-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.5}
 .caso-card{max-width:960px;margin:2.75rem auto 0;padding:2.75rem;position:relative}
-.caso-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2rem}
-.caso-logo{width:140px;height:38px;border:1px dashed rgba(34,207,246,.3);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.62rem;color:rgba(34,207,246,.45);letter-spacing:.1em}
+.caso-head{display:flex;align-items:center;justify-content:flex-end;margin-bottom:2rem}
 .tags{display:flex;gap:.75rem;flex-wrap:wrap}
 .tag{font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--txt2);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:.3rem .85rem}
-.caso-body p{font-size:1rem;color:var(--txt2);font-weight:300;line-height:1.85;margin-bottom:1rem}
-.caso-body p:last-child{margin-bottom:0}
+.caso-body p{font-size:1rem;color:var(--txt2);font-weight:300;line-height:1.85}
 .caso-div{width:40px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--c2),var(--c1));margin:1.5rem 0}
+
+/* métricas de caso */
+.metrics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+.metric-card{padding:1.5rem 1.25rem;text-align:center;border-radius:var(--r);background:rgba(34,207,246,.05);border:1px solid rgba(34,207,246,.15);transition:border-color .3s,transform .3s}
+.metric-card:hover{border-color:rgba(34,207,246,.35);transform:translateY(-3px)}
+.metric-n{font-size:1.5rem;font-weight:700;color:var(--c1);line-height:1.1;margin-bottom:.5rem}
+.metric-l{font-size:.8rem;color:var(--txt2);font-weight:300;line-height:1.5}
+
+/* CTA caso */
+.caso-cta{text-align:center;margin-top:2rem;position:relative;z-index:2}
+
+/* DIFERENTE */
 #diferente{background:var(--bg)}
 .pilares{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.75rem}
 .pilar{padding:2rem;transition:border-color .3s,transform .3s}
@@ -88,45 +118,33 @@ section{padding:6rem 5%}
 .pilar h3{font-size:1rem;font-weight:600;margin-bottom:.65rem}
 .pilar p{font-size:1rem;color:var(--txt2);font-weight:300;line-height:1.8}
 
-/* ── EQUIPO ── */
+/* EQUIPO */
 #equipo{background:var(--bg2);position:relative;overflow:hidden;padding-bottom:7rem}
 #equipo-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .equipo-deco{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
-/* floating rings */
 .ring{position:absolute;border-radius:50%;border:1px solid rgba(34,207,246,.18);animation:ringPulse 6s ease-in-out infinite}
 .ring1{width:320px;height:320px;top:-60px;left:-80px;animation-delay:0s}
 .ring2{width:200px;height:200px;top:20px;right:5%;animation-delay:1.5s}
 .ring3{width:140px;height:140px;bottom:10%;left:10%;animation-delay:3s}
 .ring4{width:260px;height:260px;bottom:-60px;right:-40px;animation-delay:.8s}
-/* floating dots cluster */
-.fdot{position:absolute;border-radius:50%;background:var(--c1);animation:floatDot 8s ease-in-out infinite}
 @keyframes ringPulse{0%,100%{opacity:.18;transform:scale(1)}50%{opacity:.38;transform:scale(1.04)}}
-@keyframes floatDot{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-/* corner accent lines */
 .equipo-line{position:absolute;background:linear-gradient(90deg,var(--c1),transparent);height:1px;pointer-events:none;z-index:1}
 .el1{top:30%;left:0;width:120px;opacity:.35;animation:linePulse 4s ease-in-out infinite}
 .el2{bottom:35%;right:0;width:90px;opacity:.25;animation:linePulse 4s ease-in-out infinite 2s;transform:rotate(180deg)}
 @keyframes linePulse{0%,100%{opacity:.2;width:80px}50%{opacity:.5;width:130px}}
-/* glow orb behind cards */
 .equipo-orb{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none;z-index:1}
 .orb1{width:380px;height:380px;background:rgba(4,128,196,.12);top:50%;left:50%;transform:translate(-50%,-50%);animation:orbDrift 10s ease-in-out infinite}
 @keyframes orbDrift{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-54%) scale(1.08)}}
-/* scan line */
-.scan-line{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(34,207,246,.22) 40%,rgba(34,207,246,.22) 60%,transparent 100%);pointer-events:none;z-index:1;animation:scanMove 7s linear infinite}
-@keyframes scanMove{0%{top:10%}100%{top:90%}}
-
 .equipo-wrap{position:relative;z-index:2;text-align:center}
 .equipo-row{display:flex;gap:2.5rem;justify-content:center;max-width:660px;margin:2.75rem auto 0}
 .persona{flex:1;padding:2rem 1.75rem;text-align:center;max-width:295px;position:relative;overflow:hidden}
 .persona::after{content:'';position:absolute;inset:0;border-radius:var(--r);background:linear-gradient(135deg,rgba(34,207,246,.04) 0%,transparent 70%);pointer-events:none}
-/* avatar ring glow */
+.persona::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1.5px;background:linear-gradient(90deg,transparent,var(--c1),transparent);opacity:.5}
 .foto-wrap{position:relative;width:100px;height:100px;margin:0 auto 1.1rem}
 .foto-ph{width:100%;height:100%;border-radius:50%;border:1.5px solid rgba(34,207,246,.5);display:flex;align-items:center;justify-content:center;font-size:.62rem;color:rgba(34,207,246,.4);letter-spacing:.1em;position:relative;z-index:2;background:rgba(34,207,246,.04)}
 .foto-glow{position:absolute;inset:-8px;border-radius:50%;border:1px solid rgba(34,207,246,.15);animation:avatarGlow 3s ease-in-out infinite}
 .foto-glow2{position:absolute;inset:-16px;border-radius:50%;border:1px solid rgba(34,207,246,.07);animation:avatarGlow 3s ease-in-out infinite .8s}
 @keyframes avatarGlow{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
-/* top accent bar on card */
-.persona::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1.5px;background:linear-gradient(90deg,transparent,var(--c1),transparent);opacity:.5}
 .persona h3{font-size:1rem;font-weight:600;margin-bottom:.25rem}
 .p-rol{font-size:.78rem;color:var(--c1);font-weight:500;letter-spacing:.03em;margin-bottom:.6rem}
 .p-email{font-size:.76rem;color:var(--txt2);margin-bottom:.85rem;word-break:break-all}
@@ -135,6 +153,7 @@ section{padding:6rem 5%}
 .li-link{display:inline-flex;align-items:center;gap:.35rem;color:var(--txt2);text-decoration:none;font-size:.78rem;transition:color .2s}
 .li-link:hover{color:var(--c1)}
 
+/* CONTACTO */
 #contacto{background:var(--bg);position:relative;overflow:hidden}
 .c-glow{position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:700px;height:350px;background:radial-gradient(ellipse,rgba(4,128,196,.13) 0%,transparent 70%);pointer-events:none}
 .c-inner{max-width:680px;margin:0 auto;text-align:center;position:relative}
@@ -145,26 +164,35 @@ section{padding:6rem 5%}
 .ff{display:flex;flex-direction:column;gap:.35rem}
 .ff.full{grid-column:1/-1}
 .ff label{font-size:.78rem;color:var(--txt2);font-weight:400;letter-spacing:.03em}
-.ff input,.ff textarea,.ff select{background:rgba(255,255,255,.04);border:1px solid rgba(34,207,246,.15);border-radius:8px;padding:.75rem 1rem;color:var(--txt);font-family:inherit;font-size:.95rem;font-weight:300;outline:none;resize:none;transition:border-color .2s,background .2s;appearance:none}
-.ff input:focus,.ff textarea:focus,.ff select:focus{border-color:rgba(34,207,246,.45);background:rgba(255,255,255,.06)}
+.ff input,.ff textarea{background:rgba(255,255,255,.04);border:1px solid rgba(34,207,246,.15);border-radius:8px;padding:.75rem 1rem;color:var(--txt);font-family:inherit;font-size:.95rem;font-weight:300;outline:none;resize:none;transition:border-color .2s,background .2s}
+.ff input:focus,.ff textarea:focus{border-color:rgba(34,207,246,.45);background:rgba(255,255,255,.06)}
 .ff input::placeholder,.ff textarea::placeholder{color:rgba(255,255,255,.18);font-weight:300}
-.ff select option{background:#122129;color:#fff}
 .btn-sub{width:100%;padding:.95rem;background:var(--c2);color:#fff;border:none;border-radius:8px;font-family:inherit;font-size:.95rem;font-weight:500;cursor:pointer;margin-top:.25rem;transition:background .2s,transform .2s,box-shadow .2s}
 .btn-sub:hover{background:var(--c1);transform:translateY(-2px);box-shadow:0 8px 28px rgba(34,207,246,.22)}
 .c-direct{margin-top:2.25rem;display:flex;gap:2rem;justify-content:center;flex-wrap:wrap}
 .c-direct a{color:var(--txt2);text-decoration:none;font-size:.85rem;font-weight:300;display:flex;align-items:center;gap:.4rem;transition:color .2s}
 .c-direct a:hover{color:var(--c1)}
+
+/* FOOTER */
 footer{background:var(--bg2);border-top:1px solid rgba(255,255,255,.06);padding:1.75rem 5%;display:flex;align-items:center;justify-content:space-between}
 .f-logo{font-size:.95rem;font-weight:700;color:var(--c1);letter-spacing:-.01em}
 footer p{font-size:.75rem;color:rgba(255,255,255,.2);font-weight:300}
+
+/* WHATSAPP BUBBLE */
+.wa-bubble{position:fixed;bottom:2rem;right:2rem;z-index:999;width:56px;height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.wa-bubble:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,.55)}
+.wa-bubble svg{width:30px;height:30px;fill:#fff}
+
+/* SCROLL ANIM */
 .fi{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .fi.d1{transition-delay:.1s}.fi.d2{transition-delay:.2s}.fi.d3{transition-delay:.3s}
 .fi.on{opacity:1;transform:translateY(0)}
 .count-val{display:inline-block}
+
 @media(max-width:900px){
   section{padding:4rem 5%}
   nav{padding:1rem 5%}
-  .svc-grid,.fases,.pilares,.mv-grid{grid-template-columns:1fr}
+  .svc-grid,.fases,.pilares,.mv-grid,.metrics-grid{grid-template-columns:1fr}
   .fases::before{display:none}
   .equipo-row{flex-direction:column;align-items:center}
   footer{flex-direction:column;gap:1rem;text-align:center}
@@ -177,8 +205,9 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.2);font-weight:300}
 </head>
 <body>
 
+<!-- NAV -->
 <nav id="nav">
-  <div class="logo-text">SmartData Solutions</div>
+  <button class="logo-text" onclick="window.scrollTo({top:0,behavior:'smooth'})">SmartData Solutions</button>
   <ul class="nav-links">
     <li><a href="#sobre">Nosotros</a></li>
     <li><a href="#servicios">Servicios</a></li>
@@ -188,6 +217,7 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.2);font-weight:300}
   </ul>
 </nav>
 
+<!-- HERO -->
 <section id="hero">
   <canvas id="canvas-bg"></canvas>
   <div class="hero-inner fi">
@@ -201,6 +231,7 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.2);font-weight:300}
   </div>
 </section>
 
+<!-- STATS BAR -->
 <div class="stats-bar">
   <div class="stat fi"><div class="stat-n"><span class="count-val" data-target="90">0</span> días</div><div class="stat-l">Primeros resultados visibles</div></div>
   <div class="stat fi d1"><div class="stat-n"><span class="count-val" data-target="3">0</span> fases</div><div class="stat-l">Metodología estructurada</div></div>
@@ -208,18 +239,26 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.2);font-weight:300}
   <div class="stat fi d3"><div class="stat-n">LATAM</div><div class="stat-l">Contexto y operación regional</div></div>
 </div>
 
+<!-- SOBRE -->
 <section id="sobre">
   <div class="wrap">
     <div class="s-tag fi">Sobre nosotros</div>
     <h2 class="s-title fi">Datos que impulsan decisiones</h2>
     <p class="sobre-desc fi">SmartData Solutions transforma datos en oportunidades concretas para optimizar operaciones y procesos empresariales. Nos especializamos en analítica y visualización de datos avanzada, proporcionando a nuestros clientes las herramientas necesarias para tomar decisiones estratégicas informadas mediante la implementación de tecnologías de vanguardia y soluciones personalizadas.</p>
     <div class="mv-grid">
-      <div class="gc mv-card fi d1"><div class="mv-label">Misión</div><p>Transformar el potencial de los datos en oportunidades concretas para pymes. Ofrecemos servicios de procesamiento, análisis y visualización que permiten identificar eficiencias operativas, generar valor tangible y maximizar resultados a través de consultoría especializada con un equipo altamente capacitado en datos y en la operación de los sectores que servimos.</p></div>
-      <div class="gc mv-card fi d2"><div class="mv-label">Visión</div><p>Ser la empresa líder en soluciones de datos para pymes en LATAM, reconocida por integrar tecnologías digitales avanzadas y optimizar procesos empresariales. El socio estratégico preferido de nuestros clientes, comprometidos a evolucionar continuamente con las necesidades emergentes del mercado.</p></div>
+      <div class="gc mv-card fi d1">
+        <div class="mv-label">Misión</div>
+        <p>Transformamos datos en oportunidades concretas para pymes mediante análisis, visualización y consultoría especializada, generando eficiencias operativas y resultados tangibles con un equipo experto en datos y en los sectores que atendemos.</p>
+      </div>
+      <div class="gc mv-card fi d2">
+        <div class="mv-label">Visión</div>
+        <p>Ser líderes en soluciones de datos para pymes en LATAM, integrando tecnologías avanzadas y optimizando procesos para convertirnos en el socio estratégico de referencia de nuestros clientes.</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- SERVICIOS -->
 <section id="servicios">
   <div class="wrap">
     <div class="s-tag fi">Servicios</div>
@@ -246,7 +285,18 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.2);font-weight:300}
   </div>
 </section>
 
+<!-- METODOLOGÍA -->
 <section id="metodologia">
+  <div id="met-deco">
+    <div class="fdot" style="width:5px;height:5px;top:12%;left:4%;opacity:.45;animation-delay:0s;background:#22cff6"></div>
+    <div class="fdot" style="width:3px;height:3px;top:65%;left:7%;opacity:.3;animation-delay:1.4s;background:#2fe8fb"></div>
+    <div class="fdot" style="width:4px;height:4px;top:80%;left:18%;opacity:.35;animation-delay:2.8s;background:#22cff6"></div>
+    <div class="fdot" style="width:6px;height:6px;top:20%;right:5%;opacity:.3;animation-delay:.7s;background:#0480c4"></div>
+    <div class="fdot" style="width:3px;height:3px;top:50%;right:8%;opacity:.4;animation-delay:2s;background:#22cff6"></div>
+    <div class="fdot" style="width:4px;height:4px;top:75%;right:14%;opacity:.35;animation-delay:3.5s;background:#2fe8fb"></div>
+    <div class="fdot" style="width:3px;height:3px;top:35%;left:2%;opacity:.25;animation-delay:4s;background:#22cff6"></div>
+    <div class="fdot" style="width:5px;height:5px;top:90%;right:3%;opacity:.2;animation-delay:1s;background:#22cff6"></div>
+  </div>
   <div class="wrap">
     <div class="s-tag fi">Metodología</div>
     <h2 class="s-title fi">Un proceso construido alrededor de su operación</h2>
@@ -258,6 +308,7 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.2);font-weight:300}
   </div>
 </section>
 
+<!-- CASO -->
 <section id="caso">
   <canvas id="caso-canvas"></canvas>
   <div class="wrap" style="position:relative;z-index:2">
@@ -265,18 +316,33 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.2);font-weight:300}
     <h2 class="s-title fi">De operar a intuición a decidir con datos</h2>
     <div class="gc caso-card fi">
       <div class="caso-head">
-        <div class="caso-logo">LOGO ALCAPLUS</div>
-        <div class="tags"><span class="tag">E-Commerce</span><span class="tag">Colombia</span><span class="tag">2024</span></div>
+        <div class="tags"><span class="tag">E-Commerce</span><span class="tag">Colombia</span><span class="tag">2025</span></div>
       </div>
       <div class="caso-body">
-        <p>Alcaplus llegó a SmartData con una operación activa pero sin visibilidad. Las decisiones del día a día dependían de la experiencia del equipo, los datos vivían dispersos en múltiples archivos y la gerencia no tenía forma de conocer el estado real del negocio en tiempo real.</p>
-        <div class="caso-div"></div>
-        <p>Implementamos un sistema de datos centralizado con dashboards operativos que hoy utiliza todo el equipo. La empresa pasó de consolidar información manualmente a contar con visibilidad en tiempo real desde cualquier dispositivo, con capacidades instaladas para seguir escalando conforme crece la operación.</p>
+        <p>El cliente llegó a SmartData con una operación activa pero sin visibilidad. Implementamos un sistema de datos centralizado con dashboards operativos que hoy utiliza todo el equipo. La empresa pasó de consolidar información manualmente a contar con visibilidad en tiempo real desde cualquier dispositivo, con capacidades instaladas para seguir escalando conforme crece la operación.</p>
       </div>
+      <div class="metrics-grid">
+        <div class="metric-card fi d1">
+          <div class="metric-n">40–60 hrs</div>
+          <div class="metric-l">semanales eliminadas de trabajo manual de consolidación</div>
+        </div>
+        <div class="metric-card fi d2">
+          <div class="metric-n">$12M COP</div>
+          <div class="metric-l">ahorrados mensualmente en servicio al cliente</div>
+        </div>
+        <div class="metric-card fi d3">
+          <div class="metric-n">23 países</div>
+          <div class="metric-l">con operación visible desde un único dashboard automatizado</div>
+        </div>
+      </div>
+    </div>
+    <div class="svc-cta fi">
+      <a href="#contacto">Quiero resultados como estos →</a>
     </div>
   </div>
 </section>
 
+<!-- DIFERENTE -->
 <section id="diferente">
   <div class="wrap">
     <div class="s-tag fi">Diferenciación</div>
@@ -304,70 +370,40 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.2);font-weight:300}
 <!-- EQUIPO -->
 <section id="equipo">
   <canvas id="equipo-canvas"></canvas>
-  <!-- decorative layer -->
   <div class="equipo-deco">
-    <div class="ring ring1"></div>
-    <div class="ring ring2"></div>
-    <div class="ring ring3"></div>
-    <div class="ring ring4"></div>
+    <div class="ring ring1"></div><div class="ring ring2"></div><div class="ring ring3"></div><div class="ring ring4"></div>
     <div class="equipo-orb orb1"></div>
-    <div class="equipo-line el1"></div>
-    <div class="equipo-line el2"></div>
-    <div class="scan-line"></div>
-    <!-- floating dots -->
-    <div class="fdot" style="width:5px;height:5px;top:15%;left:12%;opacity:.5;animation-delay:0s;background:var(--c1)"></div>
-    <div class="fdot" style="width:3px;height:3px;top:70%;left:8%;opacity:.35;animation-delay:1.2s;background:var(--c3)"></div>
-    <div class="fdot" style="width:4px;height:4px;top:30%;right:9%;opacity:.4;animation-delay:2.5s;background:var(--c1)"></div>
-    <div class="fdot" style="width:6px;height:6px;top:75%;right:12%;opacity:.3;animation-delay:.6s;background:var(--c2)"></div>
-    <div class="fdot" style="width:3px;height:3px;top:50%;left:22%;opacity:.4;animation-delay:3.8s;background:var(--c1)"></div>
-    <div class="fdot" style="width:4px;height:4px;top:20%;right:22%;opacity:.35;animation-delay:1.8s;background:var(--c3)"></div>
+    <div class="equipo-line el1"></div><div class="equipo-line el2"></div>
+    <div class="fdot" style="width:5px;height:5px;top:15%;left:12%;opacity:.5;animation-delay:0s;background:#22cff6"></div>
+    <div class="fdot" style="width:3px;height:3px;top:70%;left:8%;opacity:.35;animation-delay:1.2s;background:#2fe8fb"></div>
+    <div class="fdot" style="width:4px;height:4px;top:30%;right:9%;opacity:.4;animation-delay:2.5s;background:#22cff6"></div>
+    <div class="fdot" style="width:6px;height:6px;top:75%;right:12%;opacity:.3;animation-delay:.6s;background:#0480c4"></div>
+    <div class="fdot" style="width:3px;height:3px;top:50%;left:22%;opacity:.4;animation-delay:3.8s;background:#22cff6"></div>
+    <div class="fdot" style="width:4px;height:4px;top:20%;right:22%;opacity:.35;animation-delay:1.8s;background:#2fe8fb"></div>
   </div>
   <div class="equipo-wrap wrap">
     <div class="s-tag fi">El equipo</div>
     <h2 class="s-title fi">Las personas detrás de cada proyecto</h2>
     <div class="equipo-row">
       <div class="gc persona fi d1">
-        <div class="foto-wrap">
-          <div class="foto-glow"></div>
-          <div class="foto-glow2"></div>
-          <div class="foto-ph">FOTO</div>
-        </div>
+        <div class="foto-wrap"><div class="foto-glow"></div><div class="foto-glow2"></div><img src="https://raw.githubusercontent.com/SmartDataSolutionsllc/image/refs/heads/main/fotojorge.JPG" alt="Jorge Velásquez" style="width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top;position:relative;z-index:2;"></div>
         <h3>Jorge Velásquez</h3>
         <div class="p-rol">Founder &amp; CEO</div>
-        <div class="p-email">
-          <a href="mailto:jorge@smartdatasolutionsllc.com">
-            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-            jorge@smartdatasolutionsllc.com
-          </a>
-        </div>
-        <a href="https://linkedin.com/in/jvelasquezc" target="_blank" class="li-link">
-          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/></svg>
-          LinkedIn
-        </a>
+        <div class="p-email"><a href="mailto:jorge@smartdatasolutionsllc.com"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>jorge@smartdatasolutionsllc.com</a></div>
+        <a href="https://linkedin.com/in/jvelasquezc" target="_blank" class="li-link"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/></svg>LinkedIn</a>
       </div>
       <div class="gc persona fi d2">
-        <div class="foto-wrap">
-          <div class="foto-glow"></div>
-          <div class="foto-glow2"></div>
-          <div class="foto-ph">FOTO</div>
-        </div>
+        <div class="foto-wrap"><div class="foto-glow"></div><div class="foto-glow2"></div><img src="https://raw.githubusercontent.com/SmartDataSolutionsllc/image/refs/heads/main/fotopaula.png" alt="Paula Perilla" style="width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top;position:relative;z-index:2;"></div>
         <h3>Paula Perilla</h3>
         <div class="p-rol">PM &amp; Operations</div>
-        <div class="p-email">
-          <a href="mailto:paula@smartdatasolutionsllc.com">
-            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-            paula@smartdatasolutionsllc.com
-          </a>
-        </div>
-        <a href="https://www.linkedin.com/in/paula-perilla-parra/" target="_blank" class="li-link">
-          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/></svg>
-          LinkedIn
-        </a>
+        <div class="p-email"><a href="mailto:paula@smartdatasolutionsllc.com"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>paula@smartdatasolutionsllc.com</a></div>
+        <a href="https://www.linkedin.com/in/paula-perilla-parra/" target="_blank" class="li-link"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/></svg>LinkedIn</a>
       </div>
     </div>
   </div>
 </section>
 
+<!-- CONTACTO -->
 <section id="contacto">
   <div class="c-glow"></div>
   <div class="c-inner">
@@ -375,16 +411,22 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.2);font-weight:300}
     <h2 class="c-head fi">Sus datos ya están ahí.<br><span>Nosotros le ayudamos a usarlos.</span></h2>
     <p class="c-sub fi">Cuéntenos su operación e identificamos cómo ayudarle.</p>
     <div class="fi">
-      <div class="form-grid">
-        <div class="ff"><label>Nombre</label><input type="text" placeholder="Su nombre"></div>
-        <div class="ff"><label>Empresa</label><input type="text" placeholder="Nombre de su empresa"></div>
-        <div class="ff"><label>Correo electrónico</label><input type="email" placeholder="correo@empresa.com"></div>
-        <div class="ff"><label>Teléfono</label><input type="tel" placeholder="+57 300 000 0000"></div>
-        <div class="ff"><label>Cargo</label><input type="text" placeholder="Ej. Gerente, Director, Analista..."></div>
-        <div class="ff"><label>Sector / Industria</label><input type="text" placeholder="Ej. Manufactura, Retail, Agro..."></div>
-        <div class="ff full"><label>¿Cuál es su mayor reto con los datos hoy?</label><textarea rows="3" placeholder="Cuéntenos brevemente su situación actual"></textarea></div>
-      </div>
-      <button class="btn-sub">Agendar Diagnóstico Gratuito →</button>
+              <form action="https://formsubmit.co/paula@smartdatasolutionsllc.com" method="POST">
+        <input type="hidden" name="_cc" value="jorge@smartdatasolutionsllc.com">
+        <input type="hidden" name="_subject" value="Nuevo diagnóstico gratuito — SmartData Solutions">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <div class="form-grid">
+          <div class="ff"><label>Nombre</label><input type="text" name="nombre" placeholder="Su nombre" required></div>
+          <div class="ff"><label>Empresa</label><input type="text" name="empresa" placeholder="Nombre de su empresa" required></div>
+          <div class="ff"><label>Correo electrónico</label><input type="email" name="correo" placeholder="correo@empresa.com" required></div>
+          <div class="ff"><label>Teléfono</label><input type="tel" name="telefono" placeholder="+57 300 000 0000"></div>
+          <div class="ff"><label>Cargo</label><input type="text" name="cargo" placeholder="Ej. Gerente, Director, Analista..."></div>
+          <div class="ff"><label>Sector / Industria</label><input type="text" name="sector" placeholder="Ej. Manufactura, Retail, Agro..."></div>
+          <div class="ff full"><label>¿Cuál es su mayor reto con los datos hoy?</label><textarea rows="3" name="mensaje" placeholder="Cuéntenos brevemente su situación actual"></textarea></div>
+        </div>
+        <button type="submit" class="btn-sub">Agendar Diagnóstico Gratuito →</button>
+      </form>
     </div>
     <div class="c-direct fi">
       <a href="https://www.instagram.com/smart.datasolutions/" target="_blank">
@@ -395,10 +437,16 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.2);font-weight:300}
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="f-logo">SmartData Solutions</div>
   <p>© 2025 SmartData Solutions LLC · Bogotá, Colombia</p>
 </footer>
+
+<!-- WHATSAPP BUBBLE -->
+<a class="wa-bubble" href="https://wa.me/573189827771?text=Hola%2C%20me%20interesan%20los%20servicios%20de%20SmartData" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.738 5.49 2.027 7.8L0 32l8.418-2.007A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.77-1.851l-.485-.29-5.003 1.194 1.232-4.876-.316-.5A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.666c-.398-.199-2.354-1.161-2.718-1.294-.365-.133-.63-.199-.896.199-.265.398-1.029 1.294-1.261 1.56-.232.265-.464.299-.863.1-.398-.2-1.682-.62-3.204-1.977-1.184-1.056-1.983-2.36-2.215-2.758-.232-.398-.025-.613.174-.811.179-.178.398-.465.597-.697.199-.232.265-.398.398-.664.133-.265.066-.498-.033-.697-.1-.199-.896-2.16-1.228-2.957-.323-.776-.65-.671-.896-.683l-.763-.013c-.265 0-.696.1-1.061.498-.365.398-1.394 1.362-1.394 3.322s1.428 3.854 1.627 4.12c.199.265 2.811 4.292 6.81 6.022.952.411 1.695.657 2.274.84.955.304 1.824.261 2.511.158.766-.114 2.354-.962 2.686-1.892.332-.93.332-1.727.232-1.892-.1-.166-.365-.265-.763-.464z"/></svg>
+</a>
 
 <script>
 // NAV
@@ -424,7 +472,7 @@ function frame(){
 init(); frame();
 window.addEventListener('resize', init);
 
-// BLOB CANVAS helper
+// BLOB CANVAS
 function makeBlobs(canvasId, count, colorFn){
   const el = document.getElementById(canvasId);
   if(!el) return;
@@ -432,37 +480,19 @@ function makeBlobs(canvasId, count, colorFn){
   let bW, bH;
   const blobs = [];
   function resizeB(){ bW = el.width = el.offsetWidth; bH = el.height = el.offsetHeight; }
-  function createBlob(){
-    return { x:Math.random()*bW, y:Math.random()*bH, rx:60+Math.random()*120, ry:40+Math.random()*100,
-      rot:Math.random()*Math.PI*2, vx:(Math.random()-.5)*.18, vy:(Math.random()-.5)*.18,
-      vrot:(Math.random()-.5)*.004, alpha:.04+Math.random()*.07 };
-  }
+  function createBlob(){ return { x:Math.random()*bW, y:Math.random()*bH, rx:60+Math.random()*120, ry:40+Math.random()*100, rot:Math.random()*Math.PI*2, vx:(Math.random()-.5)*.18, vy:(Math.random()-.5)*.18, vrot:(Math.random()-.5)*.004, alpha:.04+Math.random()*.07 }; }
   resizeB();
   for(let i=0;i<count;i++) blobs.push(createBlob());
   window.addEventListener('resize', resizeB);
-  function drawBlob(b){
-    c.save(); c.translate(b.x,b.y); c.rotate(b.rot);
-    const g = c.createRadialGradient(0,0,0,0,0,Math.max(b.rx,b.ry));
-    g.addColorStop(0, colorFn(b.alpha)); g.addColorStop(1, colorFn(0));
-    c.fillStyle=g; c.beginPath(); c.ellipse(0,0,b.rx,b.ry,0,0,Math.PI*2); c.fill(); c.restore();
-  }
-  function anim(){
-    c.clearRect(0,0,bW,bH);
-    blobs.forEach(b=>{ drawBlob(b); b.x+=b.vx; b.y+=b.vy; b.rot+=b.vrot;
-      if(b.x<-150||b.x>bW+150) b.vx*=-1; if(b.y<-150||b.y>bH+150) b.vy*=-1; });
-    requestAnimationFrame(anim);
-  }
+  function drawBlob(b){ c.save(); c.translate(b.x,b.y); c.rotate(b.rot); const g=c.createRadialGradient(0,0,0,0,0,Math.max(b.rx,b.ry)); g.addColorStop(0,colorFn(b.alpha)); g.addColorStop(1,colorFn(0)); c.fillStyle=g; c.beginPath(); c.ellipse(0,0,b.rx,b.ry,0,0,Math.PI*2); c.fill(); c.restore(); }
+  function anim(){ c.clearRect(0,0,bW,bH); blobs.forEach(b=>{ drawBlob(b); b.x+=b.vx; b.y+=b.vy; b.rot+=b.vrot; if(b.x<-150||b.x>bW+150) b.vx*=-1; if(b.y<-150||b.y>bH+150) b.vy*=-1; }); requestAnimationFrame(anim); }
   anim();
 }
 makeBlobs('caso-canvas', 6, a=>`rgba(4,128,196,${a})`);
 makeBlobs('equipo-canvas', 7, a=>`rgba(34,207,246,${a*0.6})`);
 
 // COUNTER
-function animCount(el, target, dur){
-  let s=null;
-  const step=ts=>{ if(!s) s=ts; const p=Math.min((ts-s)/dur,1); el.textContent=Math.floor(p*target); if(p<1) requestAnimationFrame(step); else el.textContent=target; };
-  requestAnimationFrame(step);
-}
+function animCount(el, target, dur){ let s=null; const step=ts=>{ if(!s) s=ts; const p=Math.min((ts-s)/dur,1); el.textContent=Math.floor(p*target); if(p<1) requestAnimationFrame(step); else el.textContent=target; }; requestAnimationFrame(step); }
 
 // SCROLL OBSERVER
 const obs = new IntersectionObserver(entries=>{
