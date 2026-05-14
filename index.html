@@ -183,22 +183,41 @@ section{padding:6rem 5%}
 /* CONTACTO */
 #contacto{background:var(--bg);position:relative;overflow:hidden}
 .c-glow{position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:700px;height:350px;background:radial-gradient(ellipse,rgba(4,128,196,.13) 0%,transparent 70%);pointer-events:none}
-.c-inner{max-width:680px;margin:0 auto;text-align:center;position:relative}
+.c-inner{max-width:1100px;margin:0 auto;position:relative}
+.c-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.c-left{text-align:left}
 .c-head{font-size:clamp(1.7rem,3.2vw,2.6rem);font-weight:600;letter-spacing:-.025em;line-height:1.2;margin-bottom:.9rem}
 .c-head span{color:var(--c1)}
-.c-sub{font-size:1.05rem;color:var(--txt2);font-weight:300;line-height:1.75;margin-bottom:2.75rem}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-bottom:.9rem;text-align:left}
-.ff{display:flex;flex-direction:column;gap:.35rem}
-.ff.full{grid-column:1/-1}
-.ff label{font-size:.78rem;color:var(--txt2);font-weight:400;letter-spacing:.03em}
-.ff input,.ff textarea{background:rgba(255,255,255,.04);border:1px solid rgba(34,207,246,.15);border-radius:8px;padding:.75rem 1rem;color:var(--txt);font-family:inherit;font-size:.95rem;font-weight:300;outline:none;resize:none;transition:border-color .2s,background .2s}
-.ff input:focus,.ff textarea:focus{border-color:rgba(34,207,246,.45);background:rgba(255,255,255,.06)}
-.ff input::placeholder,.ff textarea::placeholder{color:rgba(255,255,255,.18);font-weight:300}
-.btn-sub{width:100%;padding:.95rem;background:var(--c2);color:#fff;border:none;border-radius:8px;font-family:inherit;font-size:.95rem;font-weight:500;cursor:pointer;margin-top:.25rem;transition:background .2s,transform .2s,box-shadow .2s}
-.btn-sub:hover{background:var(--c1);transform:translateY(-2px);box-shadow:0 8px 28px rgba(34,207,246,.22)}
-.c-direct{margin-top:2.25rem;display:flex;gap:2rem;justify-content:center;flex-wrap:wrap}
+.c-sub{font-size:1.05rem;color:var(--txt2);font-weight:300;line-height:1.75;margin-bottom:2rem}
+
+/* ── HUBSPOT IFRAME ── */
+.hs-wrap{
+  border:1px solid rgba(34,207,246,.15);
+  border-radius:var(--r);
+  overflow:hidden;
+  background:rgba(255,255,255,.03);
+  backdrop-filter:blur(12px);
+  transition:border-color .3s;
+}
+.hs-wrap:hover{border-color:rgba(34,207,246,.3)}
+.hs-wrap iframe{
+  display:block;
+  width:100%;
+  height:480px;
+  border:none;
+  color-scheme:normal;
+}
+
+.c-direct{margin-top:2rem;display:flex;flex-direction:column;gap:1rem}
 .c-direct a{color:var(--txt2);text-decoration:none;font-size:.85rem;font-weight:300;display:flex;align-items:center;gap:.4rem;transition:color .2s}
 .c-direct a:hover{color:var(--c1)}
+
+@media(max-width:900px){
+  .c-layout{grid-template-columns:1fr;gap:2.5rem}
+  .c-left{text-align:center}
+  .c-direct{align-items:center}
+  .hs-wrap iframe{height:580px}
+}
 
 /* FOOTER */
 footer{background:var(--bg2);border-top:1px solid rgba(255,255,255,.06);padding:1.75rem 5%;display:flex;align-items:center;justify-content:space-between}
@@ -224,7 +243,6 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.2);font-weight:300}
   .equipo-row{flex-direction:column;align-items:center}
   footer{flex-direction:column;gap:1rem;text-align:center}
   .nav-links{gap:1.2rem}
-  .form-grid{grid-template-columns:1fr}
   .c-direct{flex-direction:column;align-items:center;gap:1rem}
   .stats-bar{gap:2rem}
 }
@@ -438,32 +456,26 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.2);font-weight:300}
 <section id="contacto">
   <div class="c-glow"></div>
   <div class="c-inner">
-    <div class="s-tag fi">Contacto</div>
-    <h2 class="c-head fi">Sus datos ya están ahí.<br><span>Nosotros le ayudamos a usarlos.</span></h2>
-    <p class="c-sub fi">Cuéntenos su operación e identificamos cómo ayudarle.</p>
-    <div class="fi">
-              <form action="https://formsubmit.co/paula@smartdatasolutionsllc.com" method="POST">
-        <input type="hidden" name="_cc" value="jorge@smartdatasolutionsllc.com">
-        <input type="hidden" name="_subject" value="Nuevo diagnóstico gratuito — SmartData Solutions">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <div class="form-grid">
-          <div class="ff"><label>Nombre</label><input type="text" name="nombre" placeholder="Su nombre" required></div>
-          <div class="ff"><label>Empresa</label><input type="text" name="empresa" placeholder="Nombre de su empresa" required></div>
-          <div class="ff"><label>Correo electrónico</label><input type="email" name="correo" placeholder="correo@empresa.com" required></div>
-          <div class="ff"><label>Teléfono</label><input type="tel" name="telefono" placeholder="+57 300 000 0000"></div>
-          <div class="ff"><label>Cargo</label><input type="text" name="cargo" placeholder="Ej. Gerente, Director, Analista..."></div>
-          <div class="ff"><label>Sector / Industria</label><input type="text" name="sector" placeholder="Ej. Manufactura, Retail, Agro..."></div>
-          <div class="ff full"><label>¿Cuál es su mayor reto con los datos hoy?</label><textarea rows="3" name="mensaje" placeholder="Cuéntenos brevemente su situación actual"></textarea></div>
+    <div class="c-layout">
+      <div class="c-left">
+        <div class="s-tag fi">Contacto</div>
+        <h2 class="c-head fi">Sus datos ya están ahí.<br><span>Nosotros le ayudamos a usarlos.</span></h2>
+        <p class="c-sub fi">Cuéntenos su operación e identificamos cómo ayudarle.</p>
+        <div class="c-direct fi">
+          <a href="https://www.instagram.com/smart.datasolutions/" target="_blank">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+            @smart.datasolutions
+          </a>
         </div>
-        <button type="submit" class="btn-sub">Agendar Diagnóstico Gratuito →</button>
-      </form>
-    </div>
-    <div class="c-direct fi">
-      <a href="https://www.instagram.com/smart.datasolutions/" target="_blank">
-        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
-        @smart.datasolutions
-      </a>
+      </div>
+      <div class="hs-wrap fi">
+        <iframe
+          src="https://uj49l.share.hsforms.com/2wGSnfjRJQqWkLZL12f2k0g"
+          title="Formulario de contacto — SmartData Solutions"
+          loading="lazy"
+          allow="clipboard-write"
+        ></iframe>
+      </div>
     </div>
   </div>
 </section>
