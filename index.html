@@ -3,7 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SmartData Solutions</title>
+<title>SmartData Solutions — Business Intelligence para pymes en LATAM</title>
+<meta name="description" content="Convertimos datos dispersos en dashboards y decisiones. Analítica, visualización y automatización a la medida de pymes en Latinoamérica.">
+
+<!-- IMPORTANTE: reemplaza el dominio por la URL real de tu sitio -->
+<link rel="canonical" href="https://smartdatasolutionsllc.com/">
+
+<!-- Favicon (sube 'logo.png' a tu repo de imágenes en GitHub) -->
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/SmartDataSolutionsllc/image/refs/heads/main/logo.png">
+<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/SmartDataSolutionsllc/image/refs/heads/main/logo.png">
+
+<!-- Open Graph (vista previa al compartir en WhatsApp, LinkedIn, etc.) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="SmartData Solutions — Business Intelligence para pymes en LATAM">
+<meta property="og:description" content="Convertimos datos dispersos en dashboards y decisiones. Analítica, visualización y automatización a la medida de pymes en Latinoamérica.">
+<meta property="og:image" content="https://raw.githubusercontent.com/SmartDataSolutionsllc/image/refs/heads/main/logo.png">
+<meta property="og:url" content="https://smartdatasolutionsllc.com/">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="SmartData Solutions">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SmartData Solutions — Business Intelligence para pymes en LATAM">
+<meta name="twitter:description" content="Convertimos datos dispersos en dashboards y decisiones. Analítica, visualización y automatización a la medida de pymes en Latinoamérica.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/SmartDataSolutionsllc/image/refs/heads/main/logo.png">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
 :root{--bg:#0f161c;--bg2:#122129;--c1:#22cff6;--c2:#0480c4;--c3:#2fe8fb;--txt:#fff;--txt2:rgba(255,255,255,.65);--glass:rgba(255,255,255,.04);--gb:rgba(34,207,246,.12);--r:12px}
@@ -14,8 +37,9 @@ body{font-family:'IBM Plex Sans',sans-serif;background:var(--bg);color:var(--txt
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 5%;display:flex;align-items:center;justify-content:space-between;transition:background .3s}
 nav.scrolled{background:rgba(15,22,28,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(34,207,246,.1)}
-.logo-text{font-size:1.1rem;font-weight:700;color:var(--c1);letter-spacing:-.01em;cursor:pointer;background:none;border:none;font-family:inherit;transition:opacity .2s}
+.logo-text{font-size:1.1rem;font-weight:700;color:var(--c1);letter-spacing:-.01em;cursor:pointer;background:none;border:none;font-family:inherit;transition:opacity .2s;display:flex;align-items:center;padding:0}
 .logo-text:hover{opacity:.75}
+.nav-logo{height:34px;width:auto;display:block}
 .nav-links{display:flex;align-items:center;gap:2.25rem;list-style:none}
 .nav-links a{color:var(--txt2);text-decoration:none;font-size:.875rem;font-weight:400;letter-spacing:.02em;transition:color .2s}
 .nav-links a:hover{color:var(--txt)}
@@ -103,38 +127,59 @@ section{padding:6rem 5%}
 .svc-cta a:hover{color:var(--txt);border-color:rgba(255,255,255,.4)}
 
 /* METODOLOGÍA */
-#metodologia{background:var(--bg);position:relative;overflow:hidden}
+#metodologia{background:var(--bg2);position:relative;overflow:hidden}
 #met-deco{position:absolute;inset:0;pointer-events:none;z-index:0}
 .fdot{position:absolute;border-radius:50%;animation:floatDot 8s ease-in-out infinite}
 @keyframes floatDot{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-.fases{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.75rem;position:relative;z-index:1}
-.fases::before{content:'';position:absolute;top:1.9rem;left:calc(16.66% + 1.5rem);right:calc(16.66% + 1.5rem);height:1px;background:linear-gradient(90deg,transparent,rgba(34,207,246,.25),rgba(34,207,246,.25),transparent)}
-.fase{padding:2rem;transition:border-color .3s,transform .3s}
-.fase:hover{border-color:rgba(34,207,246,.3);transform:translateY(-3px)}
-.fase-n{font-size:.7rem;font-weight:700;letter-spacing:.12em;color:var(--c1);margin-bottom:1.4rem;display:flex;align-items:center;gap:.6rem}
-.fase-n::after{content:'';width:20px;height:1px;background:rgba(34,207,246,.4)}
-.fase h3{font-size:1.05rem;font-weight:600;margin-bottom:.7rem}
-.fase p{font-size:1rem;color:var(--txt2);font-weight:300;line-height:1.8}
+.met-flow{position:relative;max-width:840px;margin:2.5rem auto 0;z-index:1}
+.paso{position:relative;display:flex;gap:1.1rem;align-items:flex-start;padding-bottom:1.4rem}
+.paso:last-child{padding-bottom:0}
+.paso.s2{margin-left:3rem}
+.paso.s3{margin-left:6rem}
+.paso:not(:last-child)::after{content:'';position:absolute;left:20px;top:44px;bottom:-1px;width:3rem;border-left:2px solid rgba(34,207,246,.5);border-bottom:2px solid rgba(34,207,246,.28);border-bottom-left-radius:10px;z-index:0}
+.paso-node{position:relative;z-index:2;flex-shrink:0;width:42px;height:42px;border-radius:50%;background:var(--bg2);border:1.5px solid rgba(34,207,246,.55);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;color:var(--c1);box-shadow:0 0 18px rgba(34,207,246,.2)}
+.paso-card{position:relative;flex:1;padding:1.25rem 1.55rem;background:var(--glass);border:1px solid var(--gb);border-radius:var(--r);backdrop-filter:blur(12px);transition:border-color .3s,transform .3s}
+.paso-card:hover{border-color:rgba(34,207,246,.32);transform:translateX(4px)}
+.paso-card h3{font-size:1.02rem;font-weight:600;margin-bottom:.35rem}
+.paso-card p{font-size:.95rem;color:var(--txt2);font-weight:300;line-height:1.65}
 
 /* CASO */
-#caso{background:var(--bg2);overflow:hidden;position:relative}
+#caso{background:var(--bg);overflow:hidden;position:relative}
 #caso-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.5}
-.caso-card{max-width:960px;margin:2.75rem auto 0;padding:2.75rem;position:relative}
-.caso-head{display:flex;align-items:center;justify-content:flex-end;margin-bottom:2rem}
+.caso-slider{position:relative;max-width:960px;margin:2.75rem auto 0}
+.caso-viewport{overflow:hidden;border-radius:var(--r)}
+.caso-track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.caso-slide{position:relative;min-width:100%;padding:2.5rem 2.5rem 2.75rem;background:var(--glass);border:1px solid var(--gb);backdrop-filter:blur(12px);border-radius:var(--r);overflow:hidden}
+.caso-slide .caso-head{display:flex;align-items:center;justify-content:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:1.15rem}
 .tags{display:flex;gap:.75rem;flex-wrap:wrap}
 .tag{font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--txt2);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:.3rem .85rem}
+.caso-slide h3{font-size:clamp(1.15rem,2vw,1.5rem);font-weight:600;line-height:1.3;letter-spacing:-.015em}
+.caso-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.6rem 0 1.35rem}
+.cmetric{padding:1.05rem .6rem;border-radius:10px;background:rgba(34,207,246,.05);border:1px solid rgba(34,207,246,.14);text-align:center}
+.cmetric-n{font-size:clamp(1.2rem,1.9vw,1.5rem);font-weight:700;color:var(--c1);line-height:1.1;letter-spacing:-.02em;margin-bottom:.4rem}
+.cmetric-l{font-size:.82rem;color:var(--txt2);font-weight:300;line-height:1.45}
+.caso-desc{font-size:.95rem;color:var(--txt2);font-weight:300;line-height:1.72;opacity:.88}
+.caso-accent{position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--c2),var(--c1),var(--c3))}
+.caso-div{width:40px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--c2),var(--c1));margin:1.35rem 0}
 .caso-body p{font-size:1rem;color:var(--txt2);font-weight:300;line-height:1.85}
-.caso-div{width:40px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--c2),var(--c1));margin:1.5rem 0}
-
-/* métricas de caso */
-.metrics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
-.metric-card{padding:1.5rem 1.25rem;text-align:center;border-radius:var(--r);background:rgba(34,207,246,.05);border:1px solid rgba(34,207,246,.15);transition:border-color .3s,transform .3s}
-.metric-card:hover{border-color:rgba(34,207,246,.35);transform:translateY(-3px)}
-.metric-n{font-size:1.5rem;font-weight:700;color:var(--c1);line-height:1.1;margin-bottom:.5rem}
-.metric-l{font-size:.8rem;color:var(--txt2);font-weight:300;line-height:1.5}
-
-/* CTA caso */
-.caso-cta{text-align:center;margin-top:2rem;position:relative;z-index:2}
+.caso-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(15,22,28,.7);border:1px solid rgba(34,207,246,.3);color:var(--c1);display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(8px);transition:background .2s,border-color .2s;z-index:6}
+.caso-arrow:hover{background:rgba(34,207,246,.12);border-color:rgba(34,207,246,.6)}
+.caso-arrow.prev{left:-22px}
+.caso-arrow.next{right:-22px}
+.caso-arrow svg{width:20px;height:20px}
+.caso-dots{display:flex;justify-content:center;gap:.6rem;margin-top:1.75rem}
+.caso-dot{width:8px;height:8px;border-radius:50%;background:rgba(34,207,246,.25);border:none;cursor:pointer;padding:0;transition:background .3s,transform .3s}
+.caso-dot.active{background:var(--c1);transform:scale(1.3)}
+.caso-counter{text-align:center;margin-top:.85rem;font-size:.78rem;color:var(--txt2);font-weight:300;letter-spacing:.06em}
+@media(max-width:900px){
+  .caso-slide{padding:2rem 1.4rem 2.25rem}
+  .caso-metrics{gap:.6rem;margin:1.3rem 0 1.1rem}
+  .cmetric{padding:.8rem .35rem}
+  .cmetric-l{font-size:.68rem}
+  .caso-arrow{width:38px;height:38px;background:rgba(15,22,28,.88)}
+  .caso-arrow.prev{left:6px}
+  .caso-arrow.next{right:6px}
+}
 
 /* DIFERENTE */
 #diferente{background:var(--bg)}
@@ -238,8 +283,12 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.2);font-weight:300}
 @media(max-width:900px){
   section{padding:4rem 5%}
   nav{padding:1rem 5%}
-  .svc-grid,.fases,.pilares,.mv-grid,.metrics-grid{grid-template-columns:1fr}
-  .fases::before{display:none}
+  .svc-grid,.pilares,.mv-grid{grid-template-columns:1fr}
+  .paso.s2{margin-left:1.5rem}
+  .paso.s3{margin-left:3rem}
+  .paso-node{width:38px;height:38px;font-size:.75rem}
+  .paso:not(:last-child)::after{left:18px;top:40px;width:1.5rem}
+  .paso-card{padding:1.15rem 1.25rem}
   .equipo-row{flex-direction:column;align-items:center}
   footer{flex-direction:column;gap:1rem;text-align:center}
   .nav-links{gap:1.2rem}
@@ -252,7 +301,10 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.2);font-weight:300}
 
 <!-- NAV -->
 <nav id="nav">
-  <button class="logo-text" onclick="window.scrollTo({top:0,behavior:'smooth'})">SmartData Solutions</button>
+  <button class="logo-text" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="SmartData Solutions — inicio">
+    <img src="https://raw.githubusercontent.com/SmartDataSolutionsllc/image/refs/heads/main/logo.png" alt="SmartData Solutions" class="nav-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+    <span class="nav-wordmark" style="display:none">SmartData Solutions</span>
+  </button>
   <button class="hamburger" id="hamburger" aria-label="Menú">
     <span></span><span></span><span></span>
   </button>
@@ -260,8 +312,8 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.2);font-weight:300}
   <ul class="nav-links" id="nav-links">
     <li><a href="#sobre" class="nav-item">Nosotros</a></li>
     <li><a href="#servicios" class="nav-item">Servicios</a></li>
-    <li><a href="#metodologia" class="nav-item">Metodología</a></li>
     <li><a href="#caso" class="nav-item">Casos</a></li>
+    <li><a href="#metodologia" class="nav-item">Metodología</a></li>
     <li><a href="#contacto" class="btn-nav nav-item">Diagnóstico Gratuito</a></li>
   </ul>
 </nav>
@@ -282,9 +334,9 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.2);font-weight:300}
 
 <!-- STATS BAR -->
 <div class="stats-bar">
-  <div class="stat fi"><div class="stat-n"><span class="count-val" data-target="90">0</span> días</div><div class="stat-l">Primeros resultados visibles</div></div>
+  <div class="stat fi"><div class="stat-n"><span class="count-val" data-target="45">0</span> días</div><div class="stat-l">Primeros resultados visibles</div></div>
   <div class="stat fi d1"><div class="stat-n"><span class="count-val" data-target="3">0</span> fases</div><div class="stat-l">Metodología estructurada</div></div>
-  <div class="stat fi d2"><div class="stat-n">100%</div><div class="stat-l">Propiedad del cliente sobre sus datos</div></div>
+  <div class="stat fi d2"><div class="stat-n"><span class="count-val" data-target="100">0</span>%</div><div class="stat-l">Propiedad del cliente sobre sus datos</div></div>
   <div class="stat fi d3"><div class="stat-n">LATAM</div><div class="stat-l">Contexto y operación regional</div></div>
 </div>
 
@@ -293,7 +345,7 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.2);font-weight:300}
   <div class="wrap">
     <div class="s-tag fi">Sobre nosotros</div>
     <h2 class="s-title fi">Datos que impulsan decisiones</h2>
-    <p class="sobre-desc fi">SmartData Solutions transforma datos en oportunidades concretas para optimizar operaciones y procesos empresariales. Nos especializamos en analítica y visualización de datos avanzada, proporcionando a nuestros clientes las herramientas necesarias para tomar decisiones estratégicas informadas mediante la implementación de tecnologías de vanguardia y soluciones personalizadas.</p>
+    <p class="sobre-desc fi">SmartData Solutions transforma datos en oportunidades concretas para optimizar operaciones y procesos empresariales. Nos especializamos en analítica y visualización avanzada de datos, proporcionando a nuestros clientes las herramientas necesarias para tomar decisiones estratégicas informadas mediante la implementación de tecnologías de vanguardia y soluciones personalizadas.</p>
     <div class="mv-grid">
       <div class="gc mv-card fi d1">
         <div class="mv-label">Misión</div>
@@ -334,6 +386,112 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.2);font-weight:300}
   </div>
 </section>
 
+<!-- CASO -->
+<section id="caso">
+  <canvas id="caso-canvas"></canvas>
+  <div class="wrap" style="position:relative;z-index:2">
+    <div class="s-tag fi">Casos de éxito</div>
+    <h2 class="s-title fi">De operar por intuición a decidir con datos</h2>
+
+    <div class="caso-slider fi">
+      <div class="caso-viewport">
+        <div class="caso-track" id="casoTrack">
+
+          <!-- E-commerce · Arquitectura de datos -->
+          <div class="caso-slide">
+            <div class="caso-head">
+              <div class="tags"><span class="tag">E-commerce</span><span class="tag">Arquitectura de datos</span></div>
+            </div>
+            <h3>Centralización de la operación en una única plataforma de datos</h3>
+            <div class="caso-metrics">
+              <div class="cmetric"><div class="cmetric-n">23</div><div class="cmetric-l">países en un solo repositorio</div></div>
+              <div class="cmetric"><div class="cmetric-n">+18 → 1</div><div class="cmetric-l">grupos y hojas de cálculo unificados</div></div>
+              <div class="cmetric"><div class="cmetric-n">1</div><div class="cmetric-l">fuente única de verdad, todos los canales</div></div>
+            </div>
+            <p class="caso-desc">La operación estaba fragmentada en múltiples grupos de mensajería y hojas de cálculo, sin una fuente única de verdad. Se implementó una plataforma de datos sobre AWS que centraliza e integra la información de todos los canales en un repositorio consolidado y estandarizado.</p>
+            <span class="caso-accent"></span>
+          </div>
+
+          <!-- Industria extractiva · Reporting de gestión -->
+          <div class="caso-slide">
+            <div class="caso-head">
+              <div class="tags"><span class="tag">Industria extractiva</span><span class="tag">Reporting de gestión y control de costos</span></div>
+            </div>
+            <h3>Digitalización de la captura y el reporting de gestión</h3>
+            <div class="caso-metrics">
+              <div class="cmetric"><div class="cmetric-n">3 → 1</div><div class="cmetric-l">de tres archivos de Excel a una herramienta</div></div>
+              <div class="cmetric"><div class="cmetric-n">~8 → 0</div><div class="cmetric-l">horas de consolidación manual</div></div>
+              <div class="cmetric"><div class="cmetric-n">1</div><div class="cmetric-l">flujo automatizado de reporting mensual</div></div>
+            </div>
+            <p class="caso-desc">La captura de información y el reporting de gestión se hacían sin una herramienta propia e integrada. Se desarrolló una aplicación en PowerApps integrada con Power BI, sobre un modelo de datos homologado y validado, con informes de gestión mensuales estandarizados y confiables.</p>
+            <span class="caso-accent"></span>
+          </div>
+
+          <!-- E-commerce · Inteligencia de negocio -->
+          <div class="caso-slide">
+            <div class="caso-head">
+              <div class="tags"><span class="tag">E-commerce</span><span class="tag">Inteligencia de negocio</span></div>
+            </div>
+            <h3>Visibilidad operativa y comercial en tiempo real</h3>
+            <div class="caso-metrics">
+              <div class="cmetric"><div class="cmetric-n">4×</div><div class="cmetric-l">actualización de datos al día</div></div>
+              <div class="cmetric"><div class="cmetric-n">+70 → 0</div><div class="cmetric-l">horas/semana de consolidación manual</div></div>
+              <div class="cmetric"><div class="cmetric-n">1</div><div class="cmetric-l">tablero: ventas, canales, asesores y logística</div></div>
+            </div>
+            <p class="caso-desc">Las ventas se consolidaban de forma manual y dispersa, sin visibilidad oportuna para decidir. Se implementó un dashboard en Power BI, actualizado varias veces al día, que integra ventas, canales, asesores y logística en una vista única para decidir en tiempo real.</p>
+            <span class="caso-accent"></span>
+          </div>
+
+          <!-- Servicios hidrocarburos · Inventario y compras -->
+          <div class="caso-slide">
+            <div class="caso-head">
+              <div class="tags"><span class="tag">Servicios para la industria de hidrocarburos</span><span class="tag">Inventario y compras</span></div>
+            </div>
+            <h3>Diagnóstico y hoja de ruta para la optimización del inventario</h3>
+            <div class="caso-metrics">
+              <div class="cmetric"><div class="cmetric-n">~4.700</div><div class="cmetric-l">referencias (SKU) analizadas</div></div>
+              <div class="cmetric"><div class="cmetric-n">E2E</div><div class="cmetric-l">inventario y compras documentados de extremo a extremo</div></div>
+              <div class="cmetric"><div class="cmetric-n">1 + 1</div><div class="cmetric-l">dashboard de indicadores y hoja de ruta</div></div>
+            </div>
+            <p class="caso-desc">El inventario se gestionaba en un sistema local, con codificación inconsistente y sin datos oportunos. Se realizó un diagnóstico integral de inventario y compras, con extracción y transformación de datos automatizada, entregando un dashboard de indicadores y una hoja de ruta de optimización priorizada.</p>
+            <span class="caso-accent"></span>
+          </div>
+
+          <!-- E-commerce · Inventario y logística -->
+          <div class="caso-slide">
+            <div class="caso-head">
+              <div class="tags"><span class="tag">E-commerce</span><span class="tag">Inventario y logística</span></div>
+            </div>
+            <h3>Control de inventario multi-bodega, integrado y trazable</h3>
+            <div class="caso-metrics">
+              <div class="cmetric"><div class="cmetric-n">0</div><div class="cmetric-l">ventas autorizadas sin inventario suficiente</div></div>
+              <div class="cmetric"><div class="cmetric-n">100%</div><div class="cmetric-l">de los movimientos de inventario trazados</div></div>
+              <div class="cmetric"><div class="cmetric-n">+10</div><div class="cmetric-l">bodegas con control unificado</div></div>
+            </div>
+            <p class="caso-desc">El inventario no se consolidaba entre bodegas ni validaba la disponibilidad real de productos. Se implementó un módulo de inventario integrado con ventas, con gestión multi-bodega y flujos de requisición y aprobación, asegurando la trazabilidad y evitando quiebres y acumulaciones de stock.</p>
+            <span class="caso-accent"></span>
+          </div>
+
+        </div>
+      </div>
+
+      <button class="caso-arrow prev" id="casoPrev" aria-label="Caso anterior">
+        <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/></svg>
+      </button>
+      <button class="caso-arrow next" id="casoNext" aria-label="Caso siguiente">
+        <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+      </button>
+    </div>
+
+    <div class="caso-dots" id="casoDots"></div>
+    <div class="caso-counter" id="casoCounter">1 / 5</div>
+
+    <div class="svc-cta fi">
+      <a href="#contacto">Quiero resultados como estos →</a>
+    </div>
+  </div>
+</section>
+
 <!-- METODOLOGÍA -->
 <section id="metodologia">
   <div id="met-deco">
@@ -349,44 +507,28 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.2);font-weight:300}
   <div class="wrap">
     <div class="s-tag fi">Metodología</div>
     <h2 class="s-title fi">Un proceso construido alrededor de su operación</h2>
-    <div class="fases">
-      <div class="gc fase fi d1"><div class="fase-n">01</div><h3>Diagnóstico</h3><p>Analizamos la operación, identificamos las brechas de información críticas y definimos con precisión qué debe medirse y por qué. Todo parte de entender el negocio antes de proponer cualquier solución.</p></div>
-      <div class="gc fase fi d2"><div class="fase-n">02</div><h3>Construcción</h3><p>Diseñamos e implementamos la arquitectura de datos adecuada: centralización de fuentes, automatización de flujos y dashboards con los indicadores que su equipo necesita para operar con claridad.</p></div>
-      <div class="gc fase fi d3"><div class="fase-n">03</div><h3>Activación</h3><p>Acompañamos la integración del sistema al trabajo cotidiano del equipo, ajustamos según el uso real y dejamos capacidades instaladas para una operación autónoma y sostenida.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- CASO -->
-<section id="caso">
-  <canvas id="caso-canvas"></canvas>
-  <div class="wrap" style="position:relative;z-index:2">
-    <div class="s-tag fi">Caso de éxito</div>
-    <h2 class="s-title fi">De operar a intuición a decidir con datos</h2>
-    <div class="gc caso-card fi">
-      <div class="caso-head">
-        <div class="tags"><span class="tag">E-Commerce</span><span class="tag">Colombia</span><span class="tag">2025</span></div>
-      </div>
-      <div class="caso-body">
-        <p>El cliente llegó a SmartData con una operación activa pero sin visibilidad. Implementamos un sistema de datos centralizado con dashboards operativos que hoy utiliza todo el equipo. La empresa pasó de consolidar información manualmente a contar con visibilidad en tiempo real desde cualquier dispositivo, con capacidades instaladas para seguir escalando conforme crece la operación.</p>
-      </div>
-      <div class="metrics-grid">
-        <div class="metric-card fi d1">
-          <div class="metric-n">40–60 hrs</div>
-          <div class="metric-l">semanales eliminadas de trabajo manual de consolidación</div>
-        </div>
-        <div class="metric-card fi d2">
-          <div class="metric-n">$12M COP</div>
-          <div class="metric-l">ahorrados mensualmente en servicio al cliente</div>
-        </div>
-        <div class="metric-card fi d3">
-          <div class="metric-n">23 países</div>
-          <div class="metric-l">con operación visible desde un único dashboard automatizado</div>
+    <div class="met-flow">
+      <div class="paso fi">
+        <div class="paso-node">01</div>
+        <div class="paso-card">
+          <h3>Diagnóstico</h3>
+          <p>Entendemos su operación y sus decisiones para definir con precisión qué medir y por qué.</p>
         </div>
       </div>
-    </div>
-    <div class="svc-cta fi">
-      <a href="#contacto">Quiero resultados como estos →</a>
+      <div class="paso s2 fi d1">
+        <div class="paso-node">02</div>
+        <div class="paso-card">
+          <h3>Construcción</h3>
+          <p>Centralizamos las fuentes, automatizamos los flujos y montamos los dashboards que su equipo necesita para operar con claridad.</p>
+        </div>
+      </div>
+      <div class="paso s3 fi d2">
+        <div class="paso-node">03</div>
+        <div class="paso-card">
+          <h3>Activación</h3>
+          <p>Integramos el sistema al día a día del equipo y lo dejamos operando de forma autónoma tras ajustar según el uso real.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -438,7 +580,7 @@ footer p{font-size:.75rem;color:rgba(255,255,255,.2);font-weight:300}
         <div class="foto-wrap"><div class="foto-glow"></div><div class="foto-glow2"></div><img src="https://raw.githubusercontent.com/SmartDataSolutionsllc/image/refs/heads/main/fotojorge.JPG" alt="Jorge Velásquez" style="width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top;position:relative;z-index:2;"></div>
         <h3>Jorge Velásquez</h3>
         <div class="p-rol">Founder &amp; CEO</div>
-        <div class="p-email"><a href="mailto:jorgev@smartdatasolutionsllc.com"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>jorge@smartdatasolutionsllc.com</a></div>
+        <div class="p-email"><a href="mailto:jorgev@smartdatasolutionsllc.com"><svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>jorgev@smartdatasolutionsllc.com</a></div>
         <a href="https://www.linkedin.com/in/jorge-velasquez-2397a1194/" target="_blank" class="li-link"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/></svg>LinkedIn</a>
       </div>
       <div class="gc persona fi d2">
@@ -553,6 +695,58 @@ function makeBlobs(canvasId, count, colorFn){
 }
 makeBlobs('caso-canvas', 6, a=>`rgba(4,128,196,${a})`);
 makeBlobs('equipo-canvas', 7, a=>`rgba(34,207,246,${a*0.6})`);
+
+// CASO SLIDER
+(function(){
+  const track = document.getElementById('casoTrack');
+  if(!track) return;
+  const slides = Array.from(track.children);
+  const total = slides.length;
+  const dotsWrap = document.getElementById('casoDots');
+  const counter = document.getElementById('casoCounter');
+  const prevBtn = document.getElementById('casoPrev');
+  const nextBtn = document.getElementById('casoNext');
+  let idx = 0, timer = null;
+
+  slides.forEach((_,i)=>{
+    const d = document.createElement('button');
+    d.className = 'caso-dot' + (i===0 ? ' active' : '');
+    d.setAttribute('aria-label','Caso '+(i+1));
+    d.addEventListener('click', ()=>go(i,true));
+    dotsWrap.appendChild(d);
+  });
+  const dots = Array.from(dotsWrap.children);
+
+  function update(){
+    track.style.transform = `translateX(-${idx*100}%)`;
+    dots.forEach((d,i)=>d.classList.toggle('active', i===idx));
+    if(counter) counter.textContent = (idx+1)+' / '+total;
+  }
+  function go(n, manual){
+    idx = (n+total)%total;
+    update();
+    if(manual) resetAuto();
+  }
+  function startAuto(){ timer = setInterval(()=>go(idx+1), 8500); }
+  function resetAuto(){ clearInterval(timer); startAuto(); }
+
+  prevBtn.addEventListener('click', ()=>go(idx-1,true));
+  nextBtn.addEventListener('click', ()=>go(idx+1,true));
+
+  // swipe táctil
+  const vp = track.parentElement;
+  let sx=0, dx=0, dragging=false;
+  vp.addEventListener('touchstart', e=>{ sx=e.touches[0].clientX; dx=0; dragging=true; }, {passive:true});
+  vp.addEventListener('touchmove',  e=>{ if(dragging) dx=e.touches[0].clientX-sx; }, {passive:true});
+  vp.addEventListener('touchend',   ()=>{ if(Math.abs(dx)>50){ dx<0 ? go(idx+1,true) : go(idx-1,true); } dragging=false; });
+
+  // pausa en hover
+  vp.addEventListener('mouseenter', ()=>clearInterval(timer));
+  vp.addEventListener('mouseleave', startAuto);
+
+  update();
+  startAuto();
+})();
 
 // COUNTER
 function animCount(el, target, dur){ let s=null; const step=ts=>{ if(!s) s=ts; const p=Math.min((ts-s)/dur,1); el.textContent=Math.floor(p*target); if(p<1) requestAnimationFrame(step); else el.textContent=target; }; requestAnimationFrame(step); }
